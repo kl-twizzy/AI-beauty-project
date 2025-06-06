@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomessence - Регистрация</title>
+    <link rel="stylesheet" href="/style.css">
+    <!-- ... остальные линки на шрифты ... -->
+</head>
+<body class="auth-page">
+    <!-- ... остальная разметка формы ... -->
+    <a href="/auth.html" class="auth-back-link">ВЕРНУТЬСЯ</a>
+    <div class="form-page-container">
+        <h2 class="form-title-main">РЕГИСТРАЦИЯ</h2>
+        <form class="auth-form" id="registerForm">
+            <input type="email" class="form-input-field" id="registerEmail" placeholder="введите почту" required>
+            <input type="tel" class="form-input-field" id="registerPhone" placeholder="номер телефона" required>
+            <input type="password" class="form-input-field" id="registerPassword" placeholder="пароль" required minlength="6">
+            <input type="text" class="form-input-field" id="registerName" placeholder="ваше имя" required>
+            <button type="submit" class="form-submit-button">ЗАРЕГИСТРИРОВАТЬСЯ</button>
+            <p id="registerError" class="auth-error-message" style="display: none; color: red; margin-top: 10px;"></p>
+        </form>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "/node_modules/firebase/app/dist/index.mjs": "/node_modules/firebase/app/dist/index.mjs",
+            "/node_modules/firebase/auth/dist/index.mjs": "/node_modules/firebase/auth/dist/index.mjs",
+            "/node_modules/firebase/firestore/dist/index.mjs": "/node_modules/firebase/firestore/dist/index.mjs"
+            }
+    }
+    </script>
+    <!-- Сначала загрузим firebase-init.js, затем register-script.js -->
+    <script type="module" src="/js/firebase-init.js"></script>
+    <script type="module" src="/js/register-script.js"></script>
+</body>
+</html>
